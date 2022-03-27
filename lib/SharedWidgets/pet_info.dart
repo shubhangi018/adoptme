@@ -51,7 +51,7 @@ class PetAge {
 class PetInfo {
   PetInfo._();
 
-  static String c_1Info = 'She is very attractive,playful!';
+  static String c_1Info = 'She is very attractive and playful!';
   static String c_2Info = 'He is very smart and human friendly cat!';
   static String c_3Info = 'She is very calm and family oriented cat!';
   static String c_4Info = 'She is in need of a pet parent hurry and adopt her!';
@@ -78,5 +78,21 @@ class PetURL {
   static String d_3URL = 'assets/images/Dog/Leo.jpg';
   static String d_4URL = 'assets/images/Dog/Mani.jpg';
   static String d_5URL= 'assets/images/Dog/Moti.jpg';
+
+}
+
+class PetLocation {
+  PetLocation._();
+
+  static String c_1Location = 'Road N.o 16, Thane';
+  static String c_2Location = 'Yashodhan Nagar, Thane';
+  static String c_3Location = 'Near Thane Railway Station';
+  static String c_4Location = 'Vaishali Nagar, Mulund';
+  static String c_5Location = 'Shastri Nagar, Road N.o 2, Thane';
+  static String d_1Location = 'Shree-Nagar, Thane';
+  static String d_2Location = 'LBS road, Opp to Ambaji Medical, Mulund';
+  static String d_3Location = 'Near Mulund Railway Station';
+  static String d_4Location = 'Lokmanya Nagar Bus Depot, Thane';
+  static String d_5Location= 'Kisan Nagar - 2, Thane';
 
 }

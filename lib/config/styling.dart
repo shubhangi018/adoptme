@@ -38,6 +38,14 @@ class Strings{
   static String pawFriend = 'Find your PawFriend';
   static String logout = 'LogOut';
   static String adopt = 'Adopt';
+  static String founder = 'Founder';
+  static String location = 'Location';
+  static String shelterName = 'Stray-Buddy';
+  static String founderName = 'Mrs. Surekha Deshmukh';
+  static String shelterEmail = 'straybuddy@gmail.com';
+  static String founderNumber = '7021058163';
+  static String shelterLocation = 'NKT Compound,Kisan nagar-2,Thane-W,Maharashtra,400604';
+  static String shelterInfo = "Stray-Buddy is not just any regular animal shelter, here we treat and care our pets as our own children and find eligible pet parents for our lovely pets. We believe every living being has a right to live in peace and harmony and be treated with compassion. Rescue & Rehabilitation | Animal Right & Advocacy | Awareness among citizens for adoption of strays.\n'ALL GREAT & SMALL CREATURES, GOD MADE THEM ALL'";
 
 }
 
@@ -51,14 +59,13 @@ class ProjectIcons {
   static const fullNameIcon = Icon(Icons.people_alt_rounded);
   static const phoneNumberIcon = Icon(Icons.phone);
   static const popIcon = Icon(Icons.arrow_back_ios_rounded);
-  static const downloadIcon = Icon(Icons.download_rounded);
   static const detailsIcon = Icon(Icons.people_alt_rounded);
   static const logOutIcon = Icon(Icons.logout);
-  static const uploadIcon = Icon(Icons.arrow_circle_up);
-  static const addIcon = Icon(Icons.add_circle_outline);
-  static const removeIcon = Icon(Icons.remove_circle_outline);
   static const female = Icon(Icons.female_outlined);
   static const male = Icon(Icons.male_outlined);
+  static const location = Icon(Icons.location_on_outlined);
+  static const shelter = Icon(Icons.home_outlined);
+
 }
 
 ///This class will contain all the colors required during building project

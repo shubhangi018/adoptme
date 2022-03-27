@@ -1,6 +1,5 @@
 // ignore_for_file: use_key_in_widget_constructors
-import 'package:animaladopt/Screens/adoption_page.dart';
-import 'package:animaladopt/SharedWidgets/pet_data.dart';
+
 import 'package:animaladopt/project_imports.dart';
 
 ///This class is the HomePage for the Project
@@ -11,6 +10,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   ///Declarations and Initializations
+  final AuthService _auth = AuthService();
   final petData = PetDataInfo();
 
   final List<Map<String, dynamic>> petList = [
@@ -65,9 +65,9 @@ class _HomePageState extends State<HomePage> {
                 backgroundColor: Colors.white,
                 child: IconButton(
                   onPressed: () {
-                    ///Navigation to DetailsPage
-                    // Navigator.push(context,
-                    //     MaterialPageRoute(builder: (context) => DetailsPage()));
+                    ///Navigation to AboutUs
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => AboutUs()));
                   },
                   icon: ProjectIcons.detailsIcon,
                   iconSize: 20.sp,
@@ -101,7 +101,7 @@ class _HomePageState extends State<HomePage> {
                 backgroundColor: Colors.white,
                 child: IconButton(
                   onPressed: () async {
-                    //await _auth.signOut();
+                    await _auth.signOut();
                   },
                   icon: ProjectIcons.logOutIcon,
                   iconSize: 20.sp,

@@ -32,7 +32,7 @@ class _AdoptionPageState extends State<AdoptionPage> {
           ///Appbar
           buildAppBar(),
 
-          ///Occasion Items
+          ///Pets
           Container(
             alignment: Alignment.center,
             padding: EdgeInsets.only(top: 290.h),
@@ -84,6 +84,27 @@ class _AdoptionPageState extends State<AdoptionPage> {
                                   ),
                                 ),
 
+                                // Padding(
+                                //   padding:
+                                //   EdgeInsets.only(left: 10.w, top: 240.h),
+                                //   child: Row(
+                                //     children: <Widget>[
+                                //
+                                //       SizedBox(
+                                //         child: ProjectIcons.location,
+                                //       ),
+                                //
+                                //       SizedBox(width: 10.w),
+                                //
+                                //       Text(
+                                //         petList[index]['location'],
+                                //         style: TextStyle(
+                                //             fontSize: 14.sp,
+                                //             fontWeight: FontWeight.bold),
+                                //       )
+                                //     ],
+                                //   ),
+                                // ),
                               ],
                             ),
                             subtitle: Stack(
