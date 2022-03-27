@@ -46,6 +46,16 @@ class Strings{
   static String founderNumber = '7021058163';
   static String shelterLocation = 'NKT Compound,Kisan nagar-2,Thane-W,Maharashtra,400604';
   static String shelterInfo = "Stray-Buddy is not just any regular animal shelter, here we treat and care our pets as our own children and find eligible pet parents for our lovely pets. We believe every living being has a right to live in peace and harmony and be treated with compassion. Rescue & Rehabilitation | Animal Right & Advocacy | Awareness among citizens for adoption of strays.\n'ALL GREAT & SMALL CREATURES, GOD MADE THEM ALL'";
+  static String adoptionForm = 'Adoption Form';
+  static String hasPet = 'Do you have any pet with you right now?';
+  static String hasOwnHome = 'Do you have your own house?';
+  static String hasExp = 'Do you have any prior experience of handling pet?';
+  static String agreed = 'By Clicking this you will accept all the\nterms & conditions of taking care of a pet';
+  static String yesRadio = 'Yes';
+  static String noRadio = 'No';
+  static String submitForm = 'Submit';
+  static String check = 'Please check the box!';
+
 
 }
 
@@ -65,6 +75,7 @@ class ProjectIcons {
   static const male = Icon(Icons.male_outlined);
   static const location = Icon(Icons.location_on_outlined);
   static const shelter = Icon(Icons.home_outlined);
+  static const submit = Icon(Icons.done_all_outlined);
 
 }
 

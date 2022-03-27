@@ -1,5 +1,6 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_constructors_in_immutables, must_be_immutable
 
+import 'package:animaladopt/Screens/adoption_form.dart';
 import 'package:animaladopt/project_imports.dart';
 
 class AdoptionPage extends StatefulWidget {
@@ -83,28 +84,6 @@ class _AdoptionPageState extends State<AdoptionPage> {
                                     ],
                                   ),
                                 ),
-
-                                // Padding(
-                                //   padding:
-                                //   EdgeInsets.only(left: 10.w, top: 240.h),
-                                //   child: Row(
-                                //     children: <Widget>[
-                                //
-                                //       SizedBox(
-                                //         child: ProjectIcons.location,
-                                //       ),
-                                //
-                                //       SizedBox(width: 10.w),
-                                //
-                                //       Text(
-                                //         petList[index]['location'],
-                                //         style: TextStyle(
-                                //             fontSize: 14.sp,
-                                //             fontWeight: FontWeight.bold),
-                                //       )
-                                //     ],
-                                //   ),
-                                // ),
                               ],
                             ),
                             subtitle: Stack(
@@ -140,7 +119,18 @@ class _AdoptionPageState extends State<AdoptionPage> {
                                     height: 40.h,
                                     width: 120.w,
                                     child: ElevatedButton(
-                                      onPressed: () {debugPrint(petList[index].toString());},
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                AdoptionForm(),
+                                            settings: RouteSettings(
+                                              arguments: [pet, petList[index]],
+                                            ),
+                                          ),
+                                        );
+                                      },
                                       style: ElevatedButton.styleFrom(
                                         primary: ProjectColors.formFieldBordersActive
                                       ),

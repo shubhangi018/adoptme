@@ -8,6 +8,7 @@ export 'package:animaladopt/Screens/about_us.dart';
 export 'package:animaladopt/Screens/adoption_page.dart';
 export 'package:animaladopt/Screens/home_page.dart';
 export 'package:animaladopt/Screens/login_page.dart';
+export 'package:animaladopt/Services/pet_database.dart';
 export 'package:animaladopt/Screens/register_page.dart';
 export 'package:animaladopt/Screens/splash_screen.dart';
 export 'package:animaladopt/Services/user_auth.dart';
