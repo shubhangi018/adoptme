@@ -2,7 +2,15 @@
 
 import 'package:animaladopt/project_imports.dart';
 
-void main() {
+
+Future<void> main() async {
+  ///This will help to bind all the widgets used in the project
+  WidgetsFlutterBinding.ensureInitialized();
+
+  ///Functions related to Firebase will get initialize in the app
+  await Firebase.initializeApp();
+
+  ///Root of the Project
   runApp(MyApp());
 }
 
@@ -11,15 +19,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(360, 640),
-        builder: () {
-          return MaterialApp(
-            title: 'Adopt Me',
-            theme: ThemeData(fontFamily: 'Lora'),
-            debugShowCheckedModeBanner: false,
-            home: HomePage()//SplashScreen(),LoginPage()
-          );
-        }
+      builder: () => StreamProvider<UserUID?>(
+          create: (_) => AuthService().user,
+          initialData: UserUID(uid: 'No User Found'),
+          builder: (context, snapshot) {
+            return MaterialApp(
+              title: 'Animal Adopt',
+              theme: ThemeData(fontFamily: 'Lora'),
+              debugShowCheckedModeBanner: false,
+              home: SplashScreen(),
+            );
+          }),
+      designSize: const Size(360, 640),
     );
   }
 }

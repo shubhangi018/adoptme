@@ -5,9 +5,9 @@ import 'package:form_field_validator/form_field_validator.dart';
 
 ///This Class will show LoginPage for users if account is already been registered
 class LoginPage extends StatefulWidget {
-  //final Function toggleView;
+  final Function toggleView;
 
-  //LoginPage({required this.toggleView});
+  LoginPage({required this.toggleView});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -17,7 +17,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   ///Declarations and Initializations
   final _formkey = GlobalKey<FormState>();
-  // final AuthService _auth = AuthService();
+  final AuthService _auth = AuthService();
   String email = '';
   String password = '';
   String error = '';
@@ -137,7 +137,7 @@ class _LoginPageState extends State<LoginPage> {
           child: SizedBox(
             width: 100.w,
             child: ElevatedButton.icon(
-              onPressed: () => (){},//loginProcess(),
+              onPressed: () => loginProcess(),
               icon: ProjectIcons.loginIcon,
               label: Text(Strings.login),
               style: ElevatedButton.styleFrom(
@@ -175,7 +175,7 @@ class _LoginPageState extends State<LoginPage> {
               top: 530.h,
             ),
             child: TextButton(
-              onPressed: () => (){},//widget.toggleView(),
+              onPressed: () => widget.toggleView(),
               child: Stack(children: [
                 Text(
                   Strings.registration,
@@ -199,17 +199,17 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  // loginProcess() async {
-  //   if (_formkey.currentState!.validate()) {
-  //     setState(() => loading = true);
-  //     dynamic result = await _auth.signInWithEmailAndPassword(email, password);
-  //     if (result == null) {
-  //       setState(() {
-  //         error =
-  //         'Username/Password is incorrect or Internet Connection might not be initialized';
-  //         loading = false;
-  //       });
-  //     }
-  //   }
-  // }
+  loginProcess() async {
+    if (_formkey.currentState!.validate()) {
+      setState(() => loading = true);
+      dynamic result = await _auth.signInWithEmailAndPassword(email, password);
+      if (result == null) {
+        setState(() {
+          error =
+          'Username/Password is incorrect or Internet Connection might not be initialized';
+          loading = false;
+        });
+      }
+    }
+  }
 }

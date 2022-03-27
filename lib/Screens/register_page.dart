@@ -5,9 +5,9 @@ import 'package:form_field_validator/form_field_validator.dart';
 
 ///This Class will show RegisterPage for users if account is not been registered
 class RegisterPage extends StatefulWidget {
-  //final Function toggleView;
+  final Function toggleView;
 
-  //RegisterPage({required this.toggleView});
+  RegisterPage({required this.toggleView});
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -15,12 +15,11 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   ///Declarations and Initializations
-  //final AuthService _auth = AuthService();
+  final AuthService _auth = AuthService();
   final _formkey = GlobalKey<FormState>();
   String fullName = '';
   String email = '';
   String password = '';
-  final String url = 'No URL';
   int phoneNumber = 0;
   String error = '';
   bool loading = false;
@@ -201,7 +200,7 @@ class _RegisterPageState extends State<RegisterPage> {
           alignment: Alignment.center,
           padding: EdgeInsets.only(top: 510.h),
           child: ElevatedButton.icon(
-            onPressed: () => (){}, //registerProcess(),
+            onPressed: () => registerProcess(),
             icon: ProjectIcons.loginIcon,
             label: Text(Strings.register),
             style: ElevatedButton.styleFrom(
@@ -218,7 +217,7 @@ class _RegisterPageState extends State<RegisterPage> {
               top: 564.h,
             ),
             child: TextButton(
-              onPressed: () => (){},//widget.toggleView(),
+              onPressed: () => widget.toggleView(),
               child: Stack(children: [
                 Text(
                   Strings.signIn,
@@ -253,19 +252,19 @@ class _RegisterPageState extends State<RegisterPage> {
   ///then user will get register in FireBase and the 'AuthService().user' in main.dart file will start to
   ///stream UserUID object values which contains UID of the user. Wrapper() widget will catch the provided
   ///values and since user is not null it will redirect to HomePage() widget.
-  // registerProcess() async {
-  //   if (_formkey.currentState!.validate()) {
-  //     setState(() {
-  //       loading = true;
-  //     });
-  //     dynamic result = await _auth.registerWithEmailAndPassword(
-  //         email, password, fullName, phoneNumber, url);
-  //     if (result == null) {
-  //       setState(() {
-  //         error = 'Please supply a valid details';
-  //         loading = false;
-  //       });
-  //     }
-  //   }
-  // }
+  registerProcess() async {
+    if (_formkey.currentState!.validate()) {
+      setState(() {
+        loading = true;
+      });
+      dynamic result = await _auth.registerWithEmailAndPassword(
+          email, password, fullName, phoneNumber);
+      if (result == null) {
+        setState(() {
+          error = 'Please supply a valid details';
+          loading = false;
+        });
+      }
+    }
+  }
 }
