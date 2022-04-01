@@ -42,7 +42,7 @@ class _AdoptionPageState extends State<AdoptionPage> {
                 itemCount: petList.length,
                 itemBuilder: (context, index) {
                   return SizedBox(
-                    height: 400.h,
+                    height: 480.h,
                     child: Card(
                       child: Theme(
                           data: ThemeData(fontFamily: 'Lora'),
@@ -72,7 +72,7 @@ class _AdoptionPageState extends State<AdoptionPage> {
                                       Text(
                                         petList[index]['name'],
                                         style: TextStyle(
-                                            fontSize: 18.sp,
+                                            fontSize: 20.sp,
                                             fontWeight: FontWeight.bold),
                                       ),
 
@@ -96,25 +96,47 @@ class _AdoptionPageState extends State<AdoptionPage> {
                                     'Age: ${petList[index]['age']}',
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 20.sp,
+                                      fontSize: 18.sp,
                                     ),
                                   ),
                                 ),
 
                                 Padding(
                                   padding:
-                                  EdgeInsets.only(top: 40.h, left: 10.w),
+                                  EdgeInsets.only(top: 40.h,right: 40.w),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    children: [
+
+                                      SizedBox(
+                                        child: ProjectIcons.location,
+                                      ),
+
+                                      Text(
+                                       Strings.petLocation,
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16.sp,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+
+                                Padding(
+                                  padding:
+                                  EdgeInsets.only(top: 90.h, left: 10.w),
                                   child: Text(
                                     petList[index]['info'],
                                     style: TextStyle(
-                                      fontSize: 16.sp
+                                      fontSize: 18.sp
                                     ),
                                   ),
                                 ),
 
                                 Padding(
                                   padding:
-                                  EdgeInsets.only(top: 90.h,left: 100.w),
+                                  EdgeInsets.only(top: 150.h,left: 100.w),
                                   child: SizedBox(
                                     height: 40.h,
                                     width: 120.w,

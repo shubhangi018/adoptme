@@ -44,7 +44,7 @@ class Strings{
   static String founderName = 'Mrs. Surekha Deshmukh';
   static String shelterEmail = 'straybuddy@gmail.com';
   static String founderNumber = '7021058163';
-  static String shelterLocation = 'NKT Compound,Kisan nagar-2,Thane-W,Maharashtra,400604';
+  static String shelterLocation = 'NKT Compound,Kisan nagar,Thane-W,Maharashtra,400604';
   static String shelterInfo = "Stray-Buddy is not just any regular animal shelter, here we treat and care our pets as our own children and find eligible pet parents for our lovely pets. We believe every living being has a right to live in peace and harmony and be treated with compassion. Rescue & Rehabilitation | Animal Right & Advocacy | Awareness among citizens for adoption of strays.\n'ALL GREAT & SMALL CREATURES, GOD MADE THEM ALL'";
   static String adoptionForm = 'Adoption Form';
   static String hasPet = 'Do you have any pet with you right now?';
@@ -55,7 +55,7 @@ class Strings{
   static String noRadio = 'No';
   static String submitForm = 'Submit';
   static String check = 'Please check the box!';
-
+  static String petLocation = 'Stray-Buddy shelter, KisanNagar,\nThane, Maharashtra';
 
 }
 
