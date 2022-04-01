@@ -131,7 +131,7 @@ class _HomePageState extends State<HomePage> {
       width: ScreenUtil().screenWidth,
       decoration: BoxDecoration(
         gradient: gradientLayoutPW,
-        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(70.h)),
+        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(60.h), bottomRight: Radius.circular(60.h)),
       ),
       child: Align(
         alignment: Alignment.center,

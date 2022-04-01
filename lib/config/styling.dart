@@ -12,6 +12,7 @@ class ImageStrings{
   static String loginRegisterBG = 'assets/JPG/loginRegister_bg.jpg';
   static String cat = 'assets/PNG/cat.png';
   static String dog = 'assets/PNG/dog.png';
+  static String finalImg = 'assets/PNG/pets.png';
 
 }
 
@@ -56,6 +57,7 @@ class Strings{
   static String submitForm = 'Submit';
   static String check = 'Please check the box!';
   static String petLocation = 'Stray-Buddy shelter, KisanNagar,\nThane, Maharashtra';
+  static String finalMsg = 'ThankYou! For Adoption!!\nWe will contact you soon...';
 
 }
 

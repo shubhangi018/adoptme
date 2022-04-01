@@ -1,8 +1,10 @@
 
-// ignore_for_file: use_key_in_widget_constructors
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors
 
+import 'package:animaladopt/Screens/final_page.dart';
 import 'package:animaladopt/project_imports.dart';
 import 'package:form_field_validator/form_field_validator.dart';
+import 'package:telephony/telephony.dart';
 
 class AdoptionForm extends StatefulWidget {
 
@@ -160,7 +162,6 @@ class _AdoptionFormState extends State<AdoptionForm> {
                                     onChanged: (value){
                                       setState(() {
                                         hasAnyPet = value;
-                                        debugPrint(hasAnyPet.toString());
                                       });
                                     }
                                 ),
@@ -178,7 +179,6 @@ class _AdoptionFormState extends State<AdoptionForm> {
                                     onChanged: (value){
                                       setState(() {
                                         hasAnyPet = value;
-                                        debugPrint(hasAnyPet.toString());
                                       });
                                     }
                                 ),
@@ -221,7 +221,6 @@ class _AdoptionFormState extends State<AdoptionForm> {
                                     onChanged: (value){
                                       setState(() {
                                         hasOwnHome = value;
-                                        debugPrint(hasOwnHome.toString());
                                       });
                                     }
                                 ),
@@ -239,7 +238,6 @@ class _AdoptionFormState extends State<AdoptionForm> {
                                     onChanged: (value){
                                       setState(() {
                                         hasOwnHome = value;
-                                        debugPrint(hasOwnHome.toString());
                                       });
                                     }
                                 ),
@@ -282,7 +280,6 @@ class _AdoptionFormState extends State<AdoptionForm> {
                                     onChanged: (value){
                                       setState(() {
                                         hasExp = value;
-                                        debugPrint(hasExp.toString());
                                       });
                                     }
                                 ),
@@ -300,7 +297,6 @@ class _AdoptionFormState extends State<AdoptionForm> {
                                     onChanged: (value){
                                       setState(() {
                                         hasExp = value;
-                                        debugPrint(hasExp.toString());
                                       });
                                     }
                                 ),
@@ -327,7 +323,6 @@ class _AdoptionFormState extends State<AdoptionForm> {
                                 onChanged: (value){
                                   setState(() {
                                     agreed = value;
-                                    debugPrint(agreed.toString());
                                   });
                                 }
                             ),
@@ -353,8 +348,21 @@ class _AdoptionFormState extends State<AdoptionForm> {
                               onPressed: () async {
                                 if (_formkey.currentState!.validate()){
                                   if (agreed){
+                                    final Telephony telephony = Telephony.instance;
                                     final adopt = PetDatabase(pet: pet, petName: selectedPet['name']);
                                     await adopt.storeAdoptData(fullName, email, phoneNumber, hasAnyPet, hasOwnHome, hasExp, agreed);
+                                    final String msg = 'Adopter $fullName has adopted $pet named ${selectedPet['name']}';
+                                    telephony.sendSms(
+                                      to: '7738774846',
+                                      message: msg,
+                                      isMultipart: true
+                                    );
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => FinalPage()
+                                      ),
+                                    );
                                     //debugPrint(agreed.toString());
                                     } else {
                                       final snackBar = SnackBar(
